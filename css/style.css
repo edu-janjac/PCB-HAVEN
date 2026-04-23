@@ -1,0 +1,121 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+#content-wrap {
+    padding-bottom: 2.5rem;
+}
+
+/*
+CSS för topnav
+*/
+
+.topnav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #1a1a1a;
+    display: flex;
+}
+
+.topnav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 18px 20px;
+    text-decoration: none;
+}
+
+.topnav ul li a:hover {
+    background-color: #111111;
+}
+
+/*Css för hero*/
+
+.hero-video {
+    height: 100vh;
+    width: 100vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+#hero-video {
+    max-height: 100vh;
+    width: 100vw;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: 50px;
+}
+
+.hero-text p {
+    font-size: 15px;
+}
+
+.hero-text a {
+    background-color: #1a1a1a;
+    border: none;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    font-size: 15px;
+    text-decoration: none;
+    padding: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.darkend {
+    max-height: 100vh;
+    width: 100vw;
+    filter: brightness(30%);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/*Css för footer*/
+
+#footer {
+    background-color: #1a1a1a;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    position: fixed;
+    width: 100%;
+    height: 3rem;
+    bottom: 0;
+}
+
+/*
+för andra sidor där text ska vara vänster
+.hero-text {
+    position: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}*/
+
