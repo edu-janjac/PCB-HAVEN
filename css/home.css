@@ -10,6 +10,7 @@
     display: flex; 
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 #hero-video {
@@ -56,13 +57,47 @@
     left: 0;
 }
 
-/*
-för andra sidor där text ska vara vänster
-.hero-text {
-    position: center;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-}*/
+.info-text {
+    color: rgb(0, 0, 0);
+    padding: 20px 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
 
+.infotext h1 {
+    font-size: 50px;
+    margin-top: 0;
+}
+
+.info-text p {
+    text-align: left;
+}
+
+.page-links {
+    display: flex;
+    gap: 20px;
+    padding: 0px 20px;
+}
+
+.page-card {
+    flex: 1;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+
+.page-card img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    padding-bottom: 60px;
+}
+
+.page-card img:hover {
+    filter: brightness(60%);
+}
+
+.page-card p {
+    margin-top: 10px;
+    font-size: 18px;
+}

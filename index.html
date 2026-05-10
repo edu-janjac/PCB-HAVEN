@@ -6,12 +6,13 @@
     <title>PCB HAVEN</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/home.css">
-    <script src="js/components.js" type="text/javascript" defer></script>
+    <script src="js/fetcher.js" defer></script>
+    <script src="js/app.js" defer></script>
 
 </head>
 <body>
     <div id="page-container">
-        <top-nav></top-nav>
+        <nav id="topnav"></nav>
         <main>
             <div class="hero-video" alt="hero video">
                 <section class="darkend" id="hero-video">
@@ -22,11 +23,64 @@
                 <div class="hero-text">
                     <h1>Welcome to PCB HAVEN</h1>
                     <p>A PCB manufacturer</p>
-                    <a href="info.html">What is a PCB?</a>
+                    <a href="#info">What is a PCB?</a>
                 </div>
             </div>
+            <section class="info-text" id="info">
+                    <h1>What is a PCB?</h1>
+                    <p>
+                        A Printed Circuit Board (PCB) is a 
+                        flat board that holds and connects electronic components. 
+                        It is made of insulating material, usually fiberglass, 
+                        with conductive pathways etched onto its surface. 
+                        These pathways allow electricity to flow between the components, 
+                        enabling them to work together in electronic devices.
+                    </p>
+                    <p>
+                        PCBs are used in a wide range of applications, 
+                        from simple gadgets to complex machinery. 
+                        They provide a compact and organized way to connect electronic components, 
+                        making it easier to design and manufacture electronic devices.
+                    </p>
+                    <h2>How it's made:</h2>
+                    <p>
+                        PCBs are manufactured through a multi-step process that begins with designing 
+                        the circuit layout using specialized software. The design is then transferred 
+                        onto a copper-clad board, where unwanted copper is chemically etched away, 
+                        leaving only the desired conductive pathways. Holes are drilled for through-hole 
+                        components, and the board is coated with a protective solder mask before 
+                        components are soldered onto the surface.
+                    </p>
+                    <h2>Types of PCBs:</h2>
+                    <p>
+                        There are several types of PCBs, each suited for different applications. 
+                        Single-layer boards are the simplest and most cost-effective, while 
+                        multi-layer boards allow for more complex circuits in a smaller space. 
+                        Flexible PCBs can bend and fold, making them ideal for wearable electronics 
+                        and compact devices where rigid boards would not fit.
+                    </p>
+                    <h2>Why choose us:</h2>
+                    <p>
+                        At PCB HAVEN, we specialize in producing high-quality circuit boards 
+                        tailored to your exact specifications. Whether you need a simple prototype 
+                        or a large production run, our team ensures precision and reliability 
+                        at every step. We work with a wide range of materials and board configurations 
+                        to meet the demands of any project, big or small.
+                    </p>
+                    <h1>What now?</h1>
+                </section>
+                <section class="page-links">
+                    <a href="store.html" class="page-card">
+                        <p>Shop our products</p>
+                        <img src="images/link2store.jpg" alt="store">
+                    </a>
+                    <a href="design.html" class="page-card">
+                        <p>Design your PCB</p>
+                        <img src="images/link2design.jpg" alt="design">
+                    </a>
+                </section>
         </main>
-        <foot-er></foot-er>
+        <footer id="footer"></footer>
     </div>
 </body>
 </html>

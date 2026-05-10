@@ -1,0 +1,124 @@
+/*topnav css*/
+.topnav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #1a1a1a;
+    display: flex;
+}
+
+.topnav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 18px 20px;
+    text-decoration: none;
+}
+.topnav ul li a:hover {
+    background-color: #111111;
+}
+
+svg {
+    width: 30px;
+    color: white;
+}
+
+.icon-cart {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+.icon-cart span {
+    font-size: 13px;
+    display: flex;
+    width: 19px;
+    height: 19px;
+    background-color: red;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    right: 12px;
+}
+
+.cart-tab {
+    width: 400px;
+    background-color: #353432;
+    color: #eee;
+    position: fixed;
+    top: 0;
+    right: -400px;
+    bottom: 0;
+    z-index: 999;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+    transition: 0.5s;
+}
+
+body.show-cart .cart-tab{
+    right: 0;
+}
+
+.cart-tab h1 {
+    padding: 20px;
+    margin: 0;
+    font-weight: 300;
+}
+
+.cart-tab .btn {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.cart-tab .btn button {
+    background-color: #E8BC0E;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.cart-tab .btn .close {
+    background-color: #eee;
+}
+
+.cart-tab .cart-list .item img {
+    width: 100%;
+}
+
+.cart-tab .cart-list .item {
+    display: grid;
+    grid-template-columns: 70px 150px 50px 1fr;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+}
+
+.cart-list .quantity span {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: #eee;
+    color: #555;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.cart-list .quantity span:nth-child(2) {
+    background-color: transparent;
+    color: #eee;
+}
+
+.cart-list .item:nth-child(even) {
+    background-color: #eee1;
+}
+
+.cart-list {
+    overflow: auto;
+}
