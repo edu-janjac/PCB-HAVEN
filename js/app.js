@@ -11,14 +11,73 @@ async function initCart(){
     closeBtn.addEventListener('click', () => {
         body.classList.toggle('show-cart');
     });
+    
+    document.querySelector('.cart-list').addEventListener('click', (event) => {
+        let positionClick = event.target;
+        if(positionClick.classList.contains('minus') || positionClick.classList.contains('plus')) {
+            let product_id = positionClick.parentElement.parentElement.dataset.id;
+            let type = 'minus';
+            if(positionClick.classList.contains('plus')) {
+                type = 'plus';
+            }
+            changeQuantity(product_id, type);
+        } 
+    });
+
+    const changeQuantity = (product_id, type) => {
+        let positionItemInCart= carts.findIndex((value) => value.product_id == product_id);
+        if(positionItemInCart >= 0){
+            switch (type) {
+                case 'plus':
+                    carts[positionItemInCart].quantity = carts[positionItemInCart].quantity + 1;
+                    break;
+                
+                default:
+                    let valueChange = carts[positionItemInCart].quantity - 1;
+                    if(valueChange > 0){
+                        carts[positionItemInCart].quantity = valueChange;
+                    }
+                    else{
+                        carts.splice(positionItemInCart, 1);
+                    }
+                    break;
+            }
+        }
+        addCartToMemory();
+        addCartToHTML();
+    }
+
+    if(localStorage.getItem('cart')) {
+        carts = JSON.parse(localStorage.getItem('cart'));
+        //callar json filen 2 gånger, men funkar, sååå dont fix what aint broken
+        fetch('json/products.json')
+        .then(response => response.json())
+        .then(data => {
+            listProducts = data;
+            addCartToHTML();
+        })
+    }
+    
+    if(listProductHTML) {
+        listProductHTML.addEventListener('click', (event) => {
+            let positionClick = event.target;
+            if(positionClick.classList.contains('addCart')) {
+                let product_id = positionClick.parentElement.dataset.id;
+                addToCart(product_id);
+            }
+        });
+        
+        initApp();
+    }   
 }
 
 initCart();
 
 let listProductHTML = document.querySelector('.list-products');
-let listCartsHTML = document.querySelector('.cart-list');
 let listProducts = [];
 let carts = [];
+
+
 
 const addDataToHTML = () => {
     listProductHTML.innerHTML = '';
@@ -57,11 +116,16 @@ const addToCart = (product_id) => {
     else{
         carts[positionThisProductInCart].quantity = carts[positionThisProductInCart].quantity + 1;
     }
-
     addCartToHTML();
+    addCartToMemory();
+}
+
+const addCartToMemory = () => {
+    localStorage.setItem('cart', JSON.stringify(carts))
 }
 
 const addCartToHTML = () => {
+    let listCartsHTML = document.querySelector('.cart-list');
     listCartsHTML.innerHTML = '';
     let totalQuantity = 0;
     if(carts.length > 0){
@@ -69,6 +133,7 @@ const addCartToHTML = () => {
             totalQuantity = totalQuantity + cart.quantity;
             let newCart = document.createElement('div');
             newCart.classList.add('item');
+            newCart.dataset.id = cart.product_id;
             let positionProduct = listProducts.findIndex((value) => value.id == cart.product_id);
             let info = listProducts[positionProduct];
             newCart.innerHTML = `
@@ -93,13 +158,6 @@ const addCartToHTML = () => {
     document.querySelector('.icon-cart span').innerText = totalQuantity;
 }
 
-listProductHTML.addEventListener('click', (event) => {
-    let positionClick = event.target;
-    if(positionClick.classList.contains('addCart')) {
-        let product_id = positionClick.parentElement.dataset.id;
-        addToCart(product_id);
-    }
-})
 
 const initApp = () => {
     //tar data från json
@@ -108,7 +166,11 @@ const initApp = () => {
     .then(data => {
         listProducts = data;
         addDataToHTML();
+
+        //tar cart från minne
+        if(localStorage.getItem('cart')) {
+            carts = JSON.parse(localStorage.getItem('cart'));
+            addCartToHTML();
+        }
     })
 }
-
-initApp()
