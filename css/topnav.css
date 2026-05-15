@@ -1,109 +1,175 @@
-/*topnav css*/
-.topnav ul {
+.topnav {
+    /* 1. display och box model */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    /* 2. position */
+    position: relative;
+    /* 3. visuellt */
+    background-color: #1a1a1a;
+}
+
+.topnav ul.nav-links {
+    /* 1. display och box model */
+    display: flex;
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
+    /* 2. position */
+    order: 1;
+    /* 3. visuellt */
     background-color: #1a1a1a;
-    display: flex;
 }
 
 .topnav ul li a {
+    /* 1. display och box model */
     display: block;
-    color: white;
-    text-align: center;
     padding: 18px 20px;
+    /* 3. visuellt */
+    color: white;
     text-decoration: none;
+    /* 4. typografi */
+    text-align: center;
 }
+
 .topnav ul li a:hover {
+    /* 3. visuellt */
     background-color: #111111;
 }
 
 svg {
+    /* 1. display och box model */
     width: 30px;
+    /* 3. visuellt */
     color: white;
 }
 
 .icon-cart {
-    margin-left: auto;
+    /* 1. display och box model */
     display: flex;
     align-items: center;
+    padding: 18px 20px;
+    margin-left: auto;
+    /* 2. position */
     position: relative;
-    padding: 0 20px;
+    z-index: 10;
+    order: 2;
+    /* 3. visuellt */
     cursor: pointer;
 }
 
 .icon-cart span {
-    font-size: 13px;
+    /* 1. display och box model */
     display: flex;
     width: 19px;
     height: 19px;
-    background-color: red;
     justify-content: center;
     align-items: center;
+    /* 2. position */
+    position: absolute;
+    bottom: 8px;
+    right: 10px;
+    /* 3. visuellt */
+    background-color: red;
     color: white;
     border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    right: 12px;
+    /* 4. typografi */
+    font-size: 13px;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.icon-cart:hover svg {
+    /* 5. animation/transition */
+    animation: bounce 0.3s ease;
 }
 
 .cart-tab {
+    /* 1. display och box model */
     width: 400px;
-    background-color: #353432;
-    color: #eee;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+    /* 2. position */
     position: fixed;
     top: 0;
     right: -400px;
     bottom: 0;
     z-index: 999;
-    display: grid;
-    grid-template-rows: 70px 1fr 70px;
+    /* 3. visuellt */
+    background-color: #353432;
+    color: #eee;
+    /* 5. animation/transition */
     transition: 0.5s;
+    visibility: hidden;
 }
 
-body.show-cart .cart-tab{
+body.show-cart .cart-tab {
+    /* 2. position */
     right: 0;
+    visibility: visible;
 }
 
 .cart-tab h1 {
+    /* 1. display och box model */
     padding: 20px;
     margin: 0;
+    /* 4. typografi */
     font-weight: 300;
 }
 
 .cart-tab .btn {
+    /* 1. display och box model */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
 
 .cart-tab .btn button {
-    background-color: #E8BC0E;
+    /* 1. display och box model */
     border: none;
-    font-weight: 500;
     cursor: pointer;
+    /* 3. visuellt */
+    background-color: #E8BC0E;
+    /* 4. typografi */
+    font-family: inherit;
+    font-weight: 500;
 }
 
 .cart-tab .btn .close {
+    /* 3. visuellt */
     background-color: #eee;
 }
 
 .cart-tab .cart-list .item img {
+    /* 1. display och box model */
     width: 100%;
 }
 
 .cart-tab .cart-list .item {
+    /* 1. display och box model */
     display: grid;
     grid-template-columns: 70px 150px 50px 1fr;
     gap: 10px;
+    /* 3. visuellt */
     text-align: center;
     align-items: center;
 }
 
 .cart-list .quantity span {
+    /* 1. display och box model */
     display: inline-block;
     width: 25px;
     height: 25px;
+    justify-content: center;
+    align-items: center;
+    /* 3. visuellt */
     background-color: #eee;
     color: #555;
     border-radius: 50%;
@@ -111,14 +177,120 @@ body.show-cart .cart-tab{
 }
 
 .cart-list .quantity span:nth-child(2) {
+    /* 3. visuellt */
     background-color: transparent;
     color: #eee;
 }
 
 .cart-list .item:nth-child(even) {
+    /* 3. visuellt */
     background-color: #eee1;
 }
 
 .cart-list {
+    /* 1. display och box model */
     overflow: auto;
+}
+
+.hamburger {
+    /* 1. display och box model */
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .hamburger {
+        /* 1. display och box model */
+        display: block;
+        font-size: 24px;
+        padding: 18px 20px;
+        /* 3. visuellt */
+        color: white;
+        cursor: pointer;
+        /* 2. position */
+        order: 1;
+    }
+
+    .topnav ul.nav-links {
+        /* 1. display och box model */
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        /* 2. position */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 100;
+        order: 3;
+        /* 3. visuellt */
+        background-color: #1a1a1a;
+    }
+
+    body.show-menu .nav-links {
+        /* 1. display och box model */
+        display: flex;
+    }
+
+    .topnav ul li {
+        /* 1. display och box model */
+        width: 100%;
+        /* 3. visuellt */
+        border-bottom: 1px solid #333;
+    }
+
+    .topnav ul li a {
+        /* 3. visuellt */
+        text-align: left;
+        padding: 15px 20px;
+    }
+
+    .icon-cart {
+        /* 1. display och box model */
+        padding: 18px 20px;
+        margin-left: auto;
+        /* 2. position */
+        order: 2;
+    }
+
+    .icon-cart span {
+        /* 2. position */
+        right: 12px;
+        bottom: 12px;
+    }
+
+    .cart-tab {
+        /* 1. display och box model */
+        width: 100%;
+        /* 2. position */
+        right: -100%;
+    }
+
+    body.show-cart .cart-tab {
+        /* 2. position */
+        right: 0;
+    }
+
+    .cart-tab .cart-list .item {
+        /* 1. display och box model */
+        grid-template-columns: 50px 1fr 50px auto;
+    }
+
+    .page-links {
+        /* 1. display och box model */
+        flex-direction: column;
+        padding: 0 20px 40px;
+    }
+
+    .page-card img {
+        /* 1. display och box model */
+        width: 100%;
+        aspect-ratio: 16/9;
+    }
+
+    .hero-text h1 {
+        /* 4. typografi */
+        font-size: 30px;
+    }
 }

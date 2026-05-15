@@ -3,6 +3,19 @@ async function initCart(){
     let iconCart = document.querySelector('.icon-cart');
     let body = document.querySelector('body');
     let closeBtn = document.querySelector('.close');
+    let hamburger = document.querySelector('#hamburger')
+
+    if(hamburger) {
+        hamburger.addEventListener('click', () => {
+            body.classList.toggle('show-menu');
+        });
+    }
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            body.classList.remove('show-menu')
+        });
+    });
 
     iconCart.addEventListener('click', () => {
         body.classList.toggle('show-cart');
@@ -77,8 +90,6 @@ let listProductHTML = document.querySelector('.list-products');
 let listProducts = [];
 let carts = [];
 
-
-
 const addDataToHTML = () => {
     listProductHTML.innerHTML = '';
     if(listProducts.length > 0) {
@@ -87,7 +98,11 @@ const addDataToHTML = () => {
             newProduct.classList.add('item');
             newProduct.dataset.id = product.id;
             newProduct.innerHTML = `
-                <img src="${product.image}" alt="pcb product">
+                <img src="${product.image}"
+                srcset="${product.image} 800w, ${product.image} 400w"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                alt="${product.alt}"
+                loading="lazy" >
                 <h2>${product.name}</h2>
                 <div class="price">$${product.price}</div>
                 <button class="addCart">
@@ -138,7 +153,11 @@ const addCartToHTML = () => {
             let info = listProducts[positionProduct];
             newCart.innerHTML = `
             <div class="image">
-                <img src="${info.image}" alt="">
+                <img src="${info.image}"  
+                srcset="${info.image} 800w, ${info.image} 400w"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                alt="cart pcb product"
+                loading="lazy">
             </div>
             <div class="name">
                 ${info.name}

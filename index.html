@@ -12,21 +12,23 @@
 </head>
 <body>
     <div id="page-container">
-        <nav id="topnav"></nav>
+        <header id="topnav"></header>
         <main>
-            <div class="hero-video" alt="hero video">
-                <section class="darkend" id="hero-video">
-                    <video autoplay muted loop playsinline>
+            <section class="hero-video">
+                <h2 class="vissualy-hidden">Hero</h2>
+                <div class="darkend" id="hero-video">
+                    <video autoplay muted loop playsinline poster="images/heroposter.jpg">
                         <source src="images/hero.mp4" type="video/mp4">
                     </video>
-                </section>
+                </div>
                 <div class="hero-text">
                     <h1>Welcome to PCB HAVEN</h1>
                     <p>A PCB manufacturer</p>
                     <a href="#info">What is a PCB?</a>
                 </div>
-            </div>
+            </section>
             <section class="info-text" id="info">
+                <h2 class="vissualy-hidden">Information</h2>
                     <h1>What is a PCB?</h1>
                     <p>
                         A Printed Circuit Board (PCB) is a 
@@ -59,24 +61,85 @@
                         Flexible PCBs can bend and fold, making them ideal for wearable electronics 
                         and compact devices where rigid boards would not fit.
                     </p>
-                    <h2>Why choose us:</h2>
-                    <p>
-                        At PCB HAVEN, we specialize in producing high-quality circuit boards 
-                        tailored to your exact specifications. Whether you need a simple prototype 
-                        or a large production run, our team ensures precision and reliability 
-                        at every step. We work with a wide range of materials and board configurations 
-                        to meet the demands of any project, big or small.
-                    </p>
-                    <h1>What now?</h1>
+                    <h2>Why choose us?</h2>
+                    <section>
+                        <h2 class="vissualy-hidden">Comparison table</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>Other Companies</th>
+                                    <th>PCB HAVEN</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Minimum order quantity</td>
+                                    <td>100+ units</td>
+                                    <td>1 unit</td>
+                                </tr>
+                                <tr>
+                                    <td>Delivery time</td>
+                                    <td>2-4 weeks</td>
+                                    <td>3-5 days</td>
+                                </tr>
+                                <tr>
+                                    <td>Custom designs</td>
+                                    <td>❌</td>
+                                    <td>✅</td>
+                                </tr>
+                                <tr>
+                                    <td>Free design review</td>
+                                    <td>❌</td>
+                                    <td>✅</td>
+                                </tr>
+                                <tr>
+                                    <td>Multiple board layers</td>
+                                    <td>✅</td>
+                                    <td>✅</td>
+                                </tr>
+                                <tr>
+                                    <td>Flexible PCB support</td>
+                                    <td>❌</td>
+                                    <td>✅</td>
+                                </tr>
+                                <tr>
+                                    <td>24/7 customer support</td>
+                                    <td>❌</td>
+                                    <td>✅</td>
+                                </tr>
+                                <tr>
+                                    <td>Prototype friendly</td>
+                                    <td>❌</td>
+                                    <td>✅</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="3">The best choice for your PCB needs</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </section>
+                    <h1 id="page-links-h1">What now?</h1>
                 </section>
                 <section class="page-links">
+                    <h2 class="vissualy-hidden">Page Links</h2>
                     <a href="store.html" class="page-card">
                         <p>Shop our products</p>
-                        <img src="images/link2store.jpg" alt="store">
+                        <img src="images/link2store.jpg" 
+                        srcset="images/link2store.jpg 800w, images/link2store.jpg 400w"
+                        sizes="(max-width: 768px) 100vw, 50vw" 
+                        alt="store link"
+                        loading="lazy">
                     </a>
                     <a href="design.html" class="page-card">
                         <p>Design your PCB</p>
-                        <img src="images/link2design.jpg" alt="design">
+                        <img src="images/link2design.jpg" 
+                        srcset="images/link2design.jpg 800w, images/link2design.jpg 400w"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        alt="design link"
+                        loading="lazy">
                     </a>
                 </section>
         </main>

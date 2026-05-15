@@ -8,16 +8,53 @@
     <link rel="stylesheet" href="css/design.css">
     <script src="js/fetcher.js" defer></script>
     <script src="js/app.js" defer></script>
+    <script src="js/design.js" defer></script>
 </head>
 <body>
     <div id="page-container">
-        <nav id="topnav"></nav>
+        <header id="topnav"></header>
         <main>
             <section class="design-section">
                 <h1>Design</h1>
-                <p>This is the design section.</p>
+                <section class="design-container">
+                    <h2 class="vissualy-hidden">Design container</h2>
+                    <div class="upload-window">
+                        <i class="fa-solid fa-upload"></i>
+                        <p>Choose a file to upload</p>
+                        <p class="accepted-formats">Accepted formats: .jpg .png .svg</p>
+                        <input type="file" id="file-input" accept=".jpg,.png,.svg">
+                        <label for="file-input" class="upload-btn">Choose file</label>
+                        <p class="error-msg" id="errorMsg"></p>
+                    </div>
+                    <div class="preview-panel">
+                        <i class="fa-solid fa-image" id="preview-icon"></i>
+                        <p id="preview-text"></p>
+                        <img id="preview-img" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="Preview">
+                    </div>
+                </section>
+                <section class="file-info" id="fileInfo">
+                    <h2 class="vissualy-hidden">File Information</h2>
+                    <div class="info-card">
+                        <span class="info-label">Filename</span>
+                        <span id="file-name">-</span>
+                    </div>
+                    <div class="info-card">
+                        <span class="info-label">File size</span>
+                        <span id="file-size">-</span>
+                    </div>
+                    <div class="info-card">
+                        <span class="info-label">Type</span>
+                        <span id="file-type">-</span>
+                    </div>
+                </section> 
+                <section class="design-btns">
+                    <h2 class="vissualy-hidden">Design Buttons</h2>
+                    <button id="clear-btn">Clear</button>
+                    <button id="order-btn">Send Order</button>
+                </section>
             </section>
         </main>
+        <footer id="footer"></footer>
     </div>
 </body>
 </html>

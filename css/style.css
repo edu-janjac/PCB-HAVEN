@@ -1,32 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
 html {
+    /* 5. animation/transition */
     scroll-behavior: smooth;
 }
 
-body {
+html, body {
+    /* 1. display och box model */
     margin: 0;
     padding: 0;
+    /* 4. typografi */
     font-family: 'DM Sans', sans-serif;
     font-weight: bold;
+    /* 3. visuellt */
     overflow-x: hidden;
 }
 
 #page-container {
-    position: relative;
+    /* 1. display och box model */
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* 2. position */
+    position: relative;
 }
 
-
-/*what daaa fuuuuck*/
-@media screen and (max-width: 992px) {
-    .listProduct{
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .listProduct{
-        grid-template-columns: repeat(2, 1fr);
-    }
+.vissualy-hidden {
+    /* 1. display och box model */
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    /* 2. position */
+    position: absolute;
+    clip: rect(0,0,0,0);
 }

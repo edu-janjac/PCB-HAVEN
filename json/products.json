@@ -3,56 +3,64 @@
         "id": 1,
         "name": "PCB01 PRE-PRINTED PCB",
         "price": 2.99,
-        "image": "images/pcbprodct.png"
+        "image": "images/pcbprodct.png",
+        "alt": "PCB product"
     },
     
     {
         "id": 2,
         "name": "PCB02 PRE-PRINTED PCB",
-        "price": 2.99,
-        "image": "images/pcbprodct.png"
+        "price": 3.99,
+        "image": "images/pcbprodct.png",
+        "alt": "PCB product"
     },
 
     {
         "id": 3,
         "name": "PCB03 PRE-PRINTED PCB",
-        "price": 2.99,
-        "image": "images/pcbprodct.png"
+        "price": 6.99,
+        "image": "images/pcbprodct.png",
+        "alt": "PCB product"
     },
 
     {
         "id": 4,
         "name": "PCB04 PRE-PRINTED PCB",
-        "price": 2.99,
-        "image": "images/pcbprodct.png"
+        "price": 1.99,
+        "image": "images/pcbprodct.png",
+        "alt": "PCB product"
     },
 
     {
         "id": 5,
         "name": "PCB05 PRE-PRINTED PCB",
-        "price": 2.99,
-        "image": "images/pcbprodct.png"
+        "price": 8.99,
+        "image": "images/pcbprodct.png",
+        "alt": "PCB product"
     },
 
     {
         "id": 6,
         "name": "PCB06 PRE-PRINTED PCB",
-        "price": 2.99,
-        "image": "images/pcbprodct.png"
+        "price": 9.99,
+        "image": "images/pcbprodct.png",
+        "alt": "PCB product"
     },
 
     {
         "id": 7,
         "name": "PCB07 PRE-PRINTED PCB",
-        "price": 2.99,
-        "image": "images/pcbprodct.png"
+        "price": 12.99,
+        "image": "images/pcbprodct.png",
+        "alt": "PCB product"
     },
 
     {
         "id": 8,
         "name": "PCB08 PRE-PRINTED PCB",
         "price": 2.99,
-        "image": "images/pcbprodct.png"
+        "image": "images/pcbprodct.png",
+        "alt": "PCB product"
     }
     
 ]

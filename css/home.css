@@ -1,103 +1,189 @@
 /*Css för hero*/
-
 .hero-video {
+    /* 1. display och box model */
     height: 100vh;
     width: 100vw;
+    overflow: hidden;
+    /* 2. position */
+    position: relative;
+    /* 3. visuellt */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
-    display: flex; 
+    /* 4. typografi */
+    color: white;
+    /* 5. animation/transition */
+    display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
 }
 
 #hero-video {
+    /* 1. display och box model */
     max-height: 100vh;
     width: 100vw;
 }
 
 .hero-text {
+    /* 2. position */
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    /* 3. visuellt */
     color: white;
     text-align: center;
 }
 
 .hero-text h1 {
+    /* 4. typografi */
     font-size: 50px;
 }
 
 .hero-text p {
+    /* 4. typografi */
     font-size: 15px;
+    padding-bottom: 5px;
 }
 
 .hero-text a {
-    background-color: #1a1a1a;
-    border: none;
-    color: white;
-    text-align: center;
+    /* 1. display och box model */
     display: inline-block;
-    font-size: 15px;
-    text-decoration: none;
     padding: 12px;
     margin: 4px 2px;
+    /* 3. visuellt */
+    background-color: #1a1a1a;
+    color: white;
+    border: none;
+    text-decoration: none;
+    /* 4. typografi */
+    font-size: 15px;
+    text-align: center;
     cursor: pointer;
 }
 
 .darkend {
+    /* 1. display och box model */
     max-height: 100vh;
     width: 100vw;
-    filter: brightness(30%);
+    /* 2. position */
     position: absolute;
     top: 0;
     left: 0;
+    /* 3. visuellt */
+    filter: brightness(30%);
 }
 
 .info-text {
-    color: rgb(0, 0, 0);
+    /* 1. display och box model */
     padding: 20px 40px;
     max-width: 800px;
     margin: 0 auto;
+    /* 3. visuellt */
+    color: rgb(0, 0, 0);
+}
+
+.info-text h1:first-child {
+    /* 1. display och box model */
+    padding-top: 25px;
 }
 
 .infotext h1 {
+    /* 4. typografi */
     font-size: 50px;
     margin-top: 0;
 }
 
 .info-text p {
+    /* 3. visuellt */
     text-align: left;
+    /* 1. display och box model */
+    padding-top: 5px;
+    padding-bottom: 20px;
+}
+
+table {
+    /* 1. display och box model */
+    width: 100%;
+    /* 3. visuellt */
+    background-color: black;
+}
+
+thead {
+    /* 3. visuellt */
+    background-color: grey;
+}
+
+tbody tr:nth-child(odd) {
+    /* 3. visuellt */
+    background-color: lightgrey;
+}
+
+tbody tr:nth-child(even) {
+    /* 3. visuellt */
+    background-color: grey;
+}
+
+tbody td:nth-child(2), td:nth-child(3) {
+    /* 3. visuellt */
+    text-align: center;
+}
+
+tfoot {
+    /* 3. visuellt */
+    background-color: #E8BC0E;
+    color: black;
+    /* 4. typografi */
+    font-size: 1.2em;
+    text-align: center;
+}
+
+tfoot td {
+    /* 1. display och box model */
+    padding: 10px;
 }
 
 .page-links {
+    /* 1. display och box model */
     display: flex;
     gap: 20px;
     padding: 0px 20px;
+    margin-bottom: 60px;
+}
+
+#page-links-h1 {
+    /* 1. display och box model */
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
 }
 
 .page-card {
+    /* 1. display och box model */
     flex: 1;
+    /* 3. visuellt */
     text-decoration: none;
     color: black;
     text-align: center;
 }
 
 .page-card img {
+    /* 1. display och box model */
     width: 100%;
     aspect-ratio: 16/9;
     object-fit: cover;
-    padding-bottom: 60px;
 }
 
 .page-card img:hover {
+    /* 3. visuellt */
     filter: brightness(60%);
 }
 
 .page-card p {
+    /* 1. display och box model */
     margin-top: 10px;
+    padding-bottom: 10px;
+    /* 4. typografi */
     font-size: 18px;
 }
+

@@ -1,46 +1,77 @@
 .container {
+    /* 1. display och box model */
     width: 900px;
     max-width: 90vw;
     margin: auto;
-    text-align: center;
     padding-top: 10px;
+    padding-bottom: 60px;
+    text-align: center;
+    /* 5. animation/transition */
     transition: transform 0.5s;
 }
 
-.list-products .item img{
+.store-section h1 {
+    /* 1. display och box model */
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+.store-section p {
+    /* 1. display och box model */
+    padding-bottom: 30px;
+}
+
+.list-products .item img {
+    /* 1. display och box model */
     width: 90%;
-    filter: drop-shadow(0 8px 20px black)
+    /* 3. visuellt */
+    filter: drop-shadow(0 8px 20px black);
 }
 
 .list-products {
+    /* 1. display och box model */
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
 
 .list-products .item {
-    background-color: #eeeee6;
+    /* 1. display och box model */
     padding: 20px;
     border-radius: 20px;
+    /* 3. visuellt */
+    background-color: #eeeee6;
 }
 
 .list-products .item h2 {
+    /* 4. typografi */
     font-weight: 500;
     font-size: large;
 }
 
 .list-products .item .price {
+    /* 4. typografi */
     letter-spacing: 2px;
     font-size: small;
 }
 
 .list-products .item button {
-    background-color: #353432;
-    color: #eee;
+    /* 1. display och box model */
     padding: 5px 10px;
-    border-radius: 20px;
     margin-top: 10px;
+    border-radius: 20px;
     border: none;
     cursor: pointer;
+    /* 3. visuellt */
+    background-color: #353432;
+    color: #eee;
+    /* 4. typografi */
+    font-family: inherit;
 }
 
+@media screen and (max-width: 768px) {
+    .list-products {
+        /* 1. display och box model */
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

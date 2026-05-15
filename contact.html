@@ -4,21 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PCB HAVEN</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/contact.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
     <script src="js/fetcher.js" defer></script>
     <script src="js/app.js" defer></script>
 </head>
 <body>
     <div id="page-container">
-        <nav id="topnav"></nav>
+        <header id="topnav"></header>
         <main>
             <section class="contact-section">
-                <h1>Contact</h1>
-                <p>This is the contact section.</p>
+                <h1>Contact Form</h1>
+                <input type="text" name="first" placeholder="First Name" autocomplete="off" required>
+                <input type="text" name="last" placeholder="Last Name" autocomplete="off" required>
+                <input type="email" name="email" placeholder="Email Address" autocomplete="off" required>
+                <textarea rows="5" cols="60" name="message" placeholder="Message" autocomplete="off" required></textarea>
+                <!--har class på button annars stylas button på carten på denna sida-->
+                <button class="submit-btn" type="submit">Send Message</button>
             </section>
         </main>
+        <footer id="footer"></footer>
     </div>
-    
 </body>
 </html>
